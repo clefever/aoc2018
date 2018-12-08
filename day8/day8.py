@@ -9,9 +9,10 @@ class Node:
         self.metadata_entries = metadata_entries
         self.child_nodes = child_nodes
 
-def parse_entries(arr, nodes):
+def parse_entries(arr):
+    nodes = []
     if not arr:
-        return []
+        return nodes
     num_child_nodes = arr.pop(0)
     num_metadata_entries = arr.pop(0)
     metadata_entries = []
@@ -23,7 +24,7 @@ def parse_entries(arr, nodes):
     else:
         child_nodes = []
         for i in range(num_child_nodes):
-            sub_nodes = parse_entries(arr, [])
+            sub_nodes = parse_entries(arr)
             child_nodes.extend(sub_nodes)
             nodes.extend(sub_nodes)
         for j in range(num_metadata_entries):
@@ -47,7 +48,7 @@ def calc_node_value(node):
 
 def part1(input_str):
     entries = [int(s) for s in input_str.split(' ')]
-    all_nodes = parse_entries(entries, [])
+    all_nodes = parse_entries(entries)
     s = 0
     for n in all_nodes:
         s += sum([int(m) for m in n.metadata_entries])
@@ -55,7 +56,7 @@ def part1(input_str):
 
 def part2(input_str):
     entries = [int(s) for s in input_str.split(' ')]
-    all_nodes = parse_entries(entries, [])
+    all_nodes = parse_entries(entries)
     head = all_nodes[-1]
     print(calc_node_value(head))
 
