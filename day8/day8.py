@@ -1,4 +1,3 @@
-from collections import defaultdict
 from pathlib import Path
 
 class Node:
@@ -17,17 +16,17 @@ def parse_entries(arr):
     num_metadata_entries = arr.pop(0)
     metadata_entries = []
     if (num_child_nodes == 0):
-        for j in range(num_metadata_entries):
+        for _ in range(num_metadata_entries):
             metadata_entries.append(arr.pop(0))
         node = Node(num_child_nodes, num_metadata_entries, metadata_entries, [])
         return [node]
     else:
         child_nodes = []
-        for i in range(num_child_nodes):
+        for _ in range(num_child_nodes):
             sub_nodes = parse_entries(arr)
             child_nodes.extend(sub_nodes)
             nodes.extend(sub_nodes)
-        for j in range(num_metadata_entries):
+        for _ in range(num_metadata_entries):
             metadata_entries.append(arr.pop(0))
         for n in nodes:
             for c in n.child_nodes:
