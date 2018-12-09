@@ -25,14 +25,14 @@ def common_letters(input_str):
     for word_pos in range(len(inputs)):
         if word_pos < len(inputs) - 1:
             for word1_pos in range(word_pos+1, len(inputs)):
-                errors = 0
+                errors = error_pos = 0
                 for char_pos in range(len(inputs[word_pos])):
                     if inputs[word_pos][char_pos] != inputs[word1_pos][char_pos]:
                         errors += 1
+                        error_pos = char_pos
             
                 if errors <= 1:
-                    print(inputs[word_pos] + ", " + inputs[word1_pos])
-                    return
+                    return inputs[word_pos][:error_pos] + inputs[word_pos][error_pos+1:]
 
 def main():
     input_str = Path("input").read_text()
