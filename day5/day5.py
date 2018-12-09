@@ -16,7 +16,7 @@ def part1(input_str):
         if index == -1:
             break
         input_str = input_str[:index] + input_str[index+2:]
-    print(len(input_str))
+    return len(input_str)
 
 # TODO: This takes way too long
 def part2(input_str):
@@ -31,13 +31,12 @@ def part2(input_str):
                 break
             s = s[:index] + s[index+2:]
         results[l] = len(s)
-    print(results)
+    return results
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
-
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()

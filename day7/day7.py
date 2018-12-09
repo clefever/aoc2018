@@ -71,7 +71,7 @@ def part1(input_str):
         else:
             avail_steps.append(s)
 
-    print("".join([x.name for x in compl_steps]))
+    return "".join([x.name for x in compl_steps])
 
 def part2(input_str):
     steps = {}
@@ -148,12 +148,12 @@ def part2(input_str):
         if len(compl_steps) >= len(steps):
             break
 
-    print(curr_time)
+    return curr_time
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()

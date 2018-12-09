@@ -99,7 +99,7 @@ def part1(input_str):
         if max is None or g.get_sleep_time() > max.get_sleep_time():
             max = g
 
-    print(max.id * max.get_most_asleep_minute()[0])
+    return max.id * max.get_most_asleep_minute()[0]
 
 def part2(input_str):
     guards = []
@@ -140,12 +140,12 @@ def part2(input_str):
         if max is None or mam[1] > max.get_most_asleep_minute()[1]:
             max = g
 
-    print(max.id * max.get_most_asleep_minute()[0])
+    return max.id * max.get_most_asleep_minute()[0]
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()

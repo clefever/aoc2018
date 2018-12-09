@@ -27,7 +27,7 @@ def part1(input_str):
         if item[1] > 1:
             count += 1
 
-    print(count)
+    return count
 
 def part2(input_str):
     grid = defaultdict(int)
@@ -50,14 +50,13 @@ def part2(input_str):
                 if grid[(i, j)] > 1:
                     unique = False
 
-        if unique == True:
-            print(s.id)
-            return
+        if unique:
+            return s.id
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()

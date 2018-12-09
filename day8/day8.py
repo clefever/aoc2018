@@ -51,18 +51,18 @@ def part1(input_str):
     s = 0
     for n in all_nodes:
         s += sum([int(m) for m in n.metadata_entries])
-    print(s)
+    return s
 
 def part2(input_str):
     entries = [int(s) for s in input_str.split(' ')]
     all_nodes = parse_entries(entries)
     head = all_nodes[-1]
-    print(calc_node_value(head))
+    return calc_node_value(head)
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()

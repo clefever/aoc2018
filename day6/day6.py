@@ -55,7 +55,7 @@ def part1(input_str):
             if dic[coord] > max_area:
                 max_area = dic[coord]
     
-    print(max_area)
+    return max_area
 
 def part2(input_str):
     inputs = input_str.splitlines()
@@ -82,12 +82,12 @@ def part2(input_str):
             if sum < 10000:
                 region_size += 1
                 
-    print(region_size)
+    return region_size
 
 def main():
     input_str = Path("input").read_text()
-    part1(input_str)
-    part2(input_str)
+    print(part1(input_str))
+    print(part2(input_str))
 
 if __name__ == "__main__":
     main()
