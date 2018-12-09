@@ -3,7 +3,7 @@ from pathlib import Path
 
 def checksum(input_str):
     inputs = input_str.splitlines()
-    threes, twos = 0, 0
+    threes = twos = 0
     for i in inputs:
         twos_done, threes_done = False, False
         char_dict = defaultdict(int)

@@ -15,7 +15,7 @@ def parse_entries(arr):
     num_child_nodes = arr.pop(0)
     num_metadata_entries = arr.pop(0)
     metadata_entries = []
-    if (num_child_nodes == 0):
+    if num_child_nodes == 0:
         for _ in range(num_metadata_entries):
             metadata_entries.append(arr.pop(0))
         node = Node(num_child_nodes, num_metadata_entries, metadata_entries, [])
@@ -37,7 +37,7 @@ def parse_entries(arr):
         return nodes
 
 def calc_node_value(node):
-    if (node.num_child_nodes == 0):
+    if node.num_child_nodes == 0:
         return sum(node.metadata_entries)
     s = 0
     for index in node.metadata_entries:

@@ -30,17 +30,9 @@ def part1(input_str):
     input_str = input_str.splitlines()
     for i in input_str:
         s = i.split(' ')
-        s1, s2 = None, None
 
-        if s[1] in steps:
-            s1 = steps[s[1]]
-        else:
-            s1 = Step(s[1])
-
-        if s[7] in steps:
-            s2 = steps[s[7]]
-        else:
-            s2 = Step(s[7])
+        s1 = steps[s[1]] if s[1] in steps else Step(s[1])
+        s2 = steps[s[7]] if s[7] in steps else Step(s[7])
         
         s1.next.append(s2)
         s2.prev.append(s1)
@@ -78,17 +70,9 @@ def part2(input_str):
     input_str = input_str.splitlines()
     for i in input_str:
         s = i.split(' ')
-        s1, s2 = None, None
 
-        if s[1] in steps:
-            s1 = steps[s[1]]
-        else:
-            s1 = Step(s[1])
-
-        if s[7] in steps:
-            s2 = steps[s[7]]
-        else:
-            s2 = Step(s[7])
+        s1 = steps[s[1]] if s[1] in steps else Step(s[1])
+        s2 = steps[s[7]] if s[7] in steps else Step(s[7])
         
         s1.next.append(s2)
         s2.prev.append(s1)
