@@ -1,4 +1,3 @@
-from collections import defaultdict
 from pathlib import Path
 
 class Marble:
@@ -14,7 +13,7 @@ class Marble:
         return m
 
 def game_high_score(player_count, last_marble_worth):
-    scores = defaultdict(int)
+    scores = [0] * player_count
     marble_count = 1
     curr_player = 1
     marble = Marble(0)
@@ -23,7 +22,7 @@ def game_high_score(player_count, last_marble_worth):
         if i % 23 == 0:
             for _ in range(8):
                 marble = marble.prev
-            scores[curr_player] += i + marble.next.value
+            scores[curr_player-1] += i + marble.next.value
             temp = marble.next.next
             marble.next = temp
             marble_count -= 1
@@ -35,8 +34,7 @@ def game_high_score(player_count, last_marble_worth):
         if curr_player % (player_count + 1) == 0:
             curr_player = 1
 
-    high_score = max(scores.items(), key=lambda kv: kv[1])
-    return high_score[1]
+    return max(scores)
 
 def get_params(input_str):
     split = input_str.split(' ')
