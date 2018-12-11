@@ -2,7 +2,6 @@ from collections import defaultdict
 from pathlib import Path
 
 class Marble:
-
     def __init__(self, value, next = None, prev = None):
         self.value = value
         self.next = self if next is None else next

@@ -1,7 +1,6 @@
 from pathlib import Path
 
 class Node:
-
     def __init__(self, num_child_nodes, num_metadata_entries, metadata_entries, child_nodes):
         self.num_child_nodes = num_child_nodes
         self.num_metadata_entries = num_metadata_entries

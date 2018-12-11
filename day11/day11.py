@@ -1,5 +1,4 @@
 class FuelCell:
-
     def __init__(self, x, y, serial):
         self.x = x
         self.y = y
@@ -61,7 +60,7 @@ def part2(grid_size, serial):
                     max_x = i
                     max_y = j
                     max_s = s
-                    
+
     return max_x, max_y, max_s
 
 def main():

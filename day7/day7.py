@@ -1,7 +1,6 @@
 from pathlib import Path
 
 class Step:
-
     def __init__(self, name):
         self.name = name
         self.prev = []

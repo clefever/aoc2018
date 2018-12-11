@@ -2,7 +2,6 @@ from collections import defaultdict
 from pathlib import Path
 
 class PosVelPair:
-
     def __init__(self, pos, vel):
         self.pos = pos
         self.vel = vel
@@ -16,7 +15,6 @@ class PosVelPair:
             newPosx = self.pos[0] + self.vel[0]
             newPosy = self.pos[1] + self.vel[1]
             self.pos = (newPosx, newPosy)
-
 
 def calculate_message(input_str):
     inputs = input_str.splitlines()

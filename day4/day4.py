@@ -3,7 +3,6 @@ import datetime
 from pathlib import Path
 
 class Guard:
-
     def __init__(self, id):
         self.id = id
         self.shifts = []
@@ -24,9 +23,7 @@ class Guard:
             return (0, 0)
         return max(minutes.items(), key=lambda kv: kv[1])
 
-
 class Shift:
-
     def __init__(self, date):
         self.date = date
 

@@ -2,7 +2,6 @@ from collections import defaultdict
 from pathlib import Path
 
 class Square:
-
     def __init__(self, id, l_margin, t_margin, width, height):
         self.id = id
         self.l_margin = l_margin
